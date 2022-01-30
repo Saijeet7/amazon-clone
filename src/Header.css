@@ -1,11 +1,10 @@
 .header{
-    height: 60px;
-    display: flex;
-    align-items: center;
     background-color: #131921;
-    position: sticky;
-    top: 0;
-    z-index: 100;
+    display:flex;
+    align-items: center;
+    position:sticky;
+    top:0;
+    z-index: 999 ;
 }
 
 .header_logo{
