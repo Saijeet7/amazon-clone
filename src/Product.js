@@ -12,10 +12,9 @@ function Product() {
             <div className="product__rating">
                 <p>*</p>
             </div>
-
-            <img src="https://m.media-amazon.com/images/I/51T-sMqSMiL._AC_SY780_.jpg" alt="" />
-            <button>Add to Basket</button>
         </div>
+        <img src="https://m.media-amazon.com/images/I/51T-sMqSMiL._AC_SY780_.jpg" alt="" />
+        <button>Add to Basket</button>
     </div>
   )
 }
