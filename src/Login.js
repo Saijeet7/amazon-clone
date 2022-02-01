@@ -1,15 +1,23 @@
 import React from 'react';
 import './Login.css';
-import {Link} from 'react-router-dom';
+import {Link, useNavigate } from 'react-router-dom';
 import { useState } from "react";
+import {auth} from './firebase';
 
 function Login() {
 
+    const navigate = useNavigate();
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
 
     const signIn = e =>{
         e.preventDefault();
+
+        auth.signInWithEmailAndPassword(email, password)
+        .then(auth => {
+            navigate('/')
+        })
+        .catch(error=>alert(error.messsage))
 
         //Firebase Login stuffs
     }
@@ -17,6 +25,14 @@ function Login() {
     const register = e =>{
         e.preventDefault();
 
+        auth.createUserWithEmailAndPassword(email, password).then((auth)=>{
+            //If successfully create a new user with email and password
+            console.log(auth);
+            if (auth){
+                navigate('/')
+            }
+        })
+        .catch((error)=>alert(error.messsage));
         //Fire Base Sign Up Stuffs
     }
 
