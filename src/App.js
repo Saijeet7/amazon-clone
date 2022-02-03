@@ -4,6 +4,7 @@ import Header from './Header';
 import Home from './Home';
 import Checkout from './Checkout';
 import Login from './Login';
+import Payment from './Payment';
 import {BrowserRouter as Router, Routes, Route} from "react-router-dom";
 import { auth} from "./firebase"
 import { useStateValue} from "./StateProvider";
@@ -36,6 +37,9 @@ function App() {
     //BEM Convention
     <Router>
       <div className="app">
+        <Routes>
+          <Route exact path="/payment" element={[<Header/>,<Payment/>]}/> 
+        </Routes>
         <Routes>
           <Route exact path="/login" element={<Login/>}/>
         </Routes>
